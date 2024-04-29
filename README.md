@@ -1,6 +1,6 @@
 # Legion Slim 7 16APH8 on Fedora 40
 
-<img src="file:///home/prnice/Downloads/AGC_20240429_161134029.jpg" title="" alt="" width="545">
+![Image of Legion Slim 7 16APH8 on desk.](/images/hero.jpg)
 
 ## Specs
 
