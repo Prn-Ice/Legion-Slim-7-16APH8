@@ -1,5 +1,7 @@
 # Legion Slim 7 16APH8 on Fedora 40
 
+<img src="file:///home/prnice/Downloads/AGC_20240429_161134029.jpg" title="" alt="" width="545">
+
 ## Specs
 
 - Operating System: Fedora Linux 40
@@ -94,8 +96,6 @@
   
   > When the Nvidia drivers are installed, `nvidia-powerd` reports an error setting GPU power limits. One speaker stopped working again after the Nvidia issues. 
 
-
-
 ## **[LenovoLegionLinux](https://github.com/johnfanv2/LenovoLegionLinux)**
 
 Gives me some of the options from Lenovo vantage on Linux. Includes but not limited to:
@@ -121,8 +121,6 @@ Gives me some of the options from Lenovo vantage on Linux. Includes but not limi
   > After some investigation, this error is related to audio. More info [TAS2781: Can&#39;t control volume on TAS2781 - Audio forum - Audio - TI E2E support forums](https://e2e.ti.com/support/audio-group/audio/f/audio-forum/1282425/tas2781-can-t-control-volume-on-tas2781)
 
 - Only `power-profile-daemon` switching and some toggles work at the moment
-
-
 
 ## **[auto-cpufreq](https://github.com/AdnanHodzic/auto-cpufreq)**
 
