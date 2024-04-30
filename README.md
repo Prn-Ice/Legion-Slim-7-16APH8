@@ -1,6 +1,6 @@
 # Legion Slim 7 16APH8 on Fedora 40
 
-![Image of Legion Slim 7 16APH8 on desk.](/images/hero.jpg)
+![Image of Legion Slim 7 16APH8 on desk.](./images/hero.jpg)
 
 ## Specs
 
@@ -95,8 +95,12 @@
 - Installing Nvidia drivers causes the PC to heat up and increases idle power consumption to around 30w
   
   > When the Nvidia drivers are installed, `nvidia-powerd` reports an error setting GPU power limits. One speaker stopped working again after the Nvidia issues. 
+  
+- Closing the lid on sleep causes a shutdown
 
-## **[LenovoLegionLinux](https://github.com/johnfanv2/LenovoLegionLinux)**
+
+
+## [LenovoLegionLinux](https://github.com/johnfanv2/LenovoLegionLinux)
 
 Gives me some of the options from Lenovo vantage on Linux. Includes but not limited to:
 
@@ -122,7 +126,9 @@ Gives me some of the options from Lenovo vantage on Linux. Includes but not limi
 
 - Only `power-profile-daemon` switching and some toggles work at the moment
 
-## **[auto-cpufreq](https://github.com/AdnanHodzic/auto-cpufreq)**
+
+
+## [auto-cpufreq](https://github.com/AdnanHodzic/auto-cpufreq)
 
 Functions similarly to TLP, main objective is to improve battery life by reducing performance on battery.
 
