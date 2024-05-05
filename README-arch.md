@@ -39,6 +39,7 @@ prnice@legion-S7 ~> neofetch
 - Similar to Fedora
 - Nvidia with beta drivers does not cause the laptop to overheat and power draw is reasonable
 - [LenovoLegionLinux](https://github.com/johnfanv2/LenovoLegionLinux) is available and easy to install on the aur
+- Subtle audio tweaks mentioned [here](https://www.reddit.com/r/LenovoLegion/comments/1982p86/lenovo_legion_5_slim_7840hs4060_maxq_with_debian/?share_id=oNkonsOeaFhihfMHFrTXv&utm_content=1&utm_medium=android_app&utm_name=androidcss&utm_source=share&utm_term=1)
 
 
 
@@ -48,29 +49,38 @@ prnice@legion-S7 ~> neofetch
 - Speaker issue is worse
 - SDDM Login screen has wrong scaling
 - Deep sleep
+- RGB controls. Opened issue [here](https://github.com/4JX/L5P-Keyboard-RGB/issues/156)
 
 
 
 ## Workarounds
+- Close lid: 
 
-- ~~Close lid: No good workaround but closing the lid while the laptop is asleep is the core issue as the laptop will immediately shutdown. Closing the lid when the laptop is awake and unlocked works as expected~~
+  - ~~No good workaround but closing the lid while the laptop is asleep is the core issue as the laptop will immediately shutdown. Closing the lid when the laptop is awake and unlocked works as expected~~
 
-- Close lid: Blacklist the `ideapad_laptop` kernel module. [source](https://www.reddit.com/r/LenovoLegion/comments/17ohg2s/comment/kf97aht/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
+  - Blacklist the `ideapad_laptop` kernel module. [source](https://www.reddit.com/r/LenovoLegion/comments/17ohg2s/comment/kf97aht/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
 
-- ~~Speaker issue: Installing [this](https://aur.archlinux.org/packages/legion-y9000x-2022-iah7-sound-fix-dkms) package seems to fix or at least reduce the issue~~
+    > Blacklisting this module removes the battery limit function on `LenovoLegionLinux`. 
+    >
+    > Make sure the option is ticked before blacklisting.
 
-- Speaker issue: Switching from `integrated` to `dedicated` GPU provides a temporary fix
+- Speaker issue
+
+  - ~~Installing [this](https://aur.archlinux.org/packages/legion-y9000x-2022-iah7-sound-fix-dkms) package seems to fix or at least reduce the issue~~
+  - Switching from `integrated` to `dedicated` GPU provides a temporary fix
+  - Patching kernel is another option https://bugzilla.kernel.org/show_bug.cgi?id=216194#c130
 
 - SDDM: SDDM works in X11 mode by default, enable wayland support to fix the issue https://wiki.archlinux.org/title/SDDM#Wayland
 
-- ~~Deep sleep: Follow instructions [here](https://forum.manjaro.org/t/weird-sleep-issue-laptop-powers-off-if-lid-is-close-when-sleeping/154144) to enable deep sleep option in bios~~
+- Deep Sleep
 
-  > 1. restart and enter bios with F2
-  > 2. Pres Ctrl+Alt+Del
-  > 3. (You need two hands for this one ) Immediately after start pressing  Fn+R+N in equal intervals not very fast and with the other hand press F2 between that intervals. This will boot to BIOS but when you click on  the More (Advanced options) button in the lower right corner there will  be a lot more options for settings.
-  > 4. You need to navigate then to the first of three options with 3  letters PBS or something like that. Under that there is an option for  Power Saving and there is the Modern StandBy setting.
-  
-- Deep sleep: The fix above enables the `deep` sleep option, but the system fails to resume from suspend with deep sleep enabled
+  - ~~Follow instructions [here](https://forum.manjaro.org/t/weird-sleep-issue-laptop-powers-off-if-lid-is-close-when-sleeping/154144) to enable deep sleep option in bios~~
+      > 1. restart and enter bios with F2
+      > 2. Pres Ctrl+Alt+Del
+      > 3. (You need two hands for this one ) Immediately after start pressing  Fn+R+N in equal intervals not very fast and with the other hand press F2 between that intervals. This will boot to BIOS but when you click on  the More (Advanced options) button in the lower right corner there will  be a lot more options for settings.
+      > 4. You need to navigate then to the first of three options with 3  letters PBS or something like that. Under that there is an option for  Power Saving and there is the Modern StandBy setting.
+  - The fix above enables the `deep` sleep option, but the system fails to resume from suspend with deep sleep enabled
+
 
 
 
