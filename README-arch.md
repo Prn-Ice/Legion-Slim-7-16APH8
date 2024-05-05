@@ -57,7 +57,9 @@ prnice@legion-S7 ~> neofetch
 
 - Close lid: Blacklist the `ideapad_laptop` kernel module. [source](https://www.reddit.com/r/LenovoLegion/comments/17ohg2s/comment/kf97aht/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
 
-- Speaker issue: Installing [this](https://aur.archlinux.org/packages/legion-y9000x-2022-iah7-sound-fix-dkms) package seems to fix or at least reduce the issue
+- ~~Speaker issue: Installing [this](https://aur.archlinux.org/packages/legion-y9000x-2022-iah7-sound-fix-dkms) package seems to fix or at least reduce the issue~~
+
+- Speaker issue: Switching from `integrated` to `dedicated` GPU provides a temporary fix
 
 - SDDM: SDDM works in X11 mode by default, enable wayland support to fix the issue https://wiki.archlinux.org/title/SDDM#Wayland
 
@@ -67,7 +69,10 @@ prnice@legion-S7 ~> neofetch
   > 2. Pres Ctrl+Alt+Del
   > 3. (You need two hands for this one ) Immediately after start pressing  Fn+R+N in equal intervals not very fast and with the other hand press F2 between that intervals. This will boot to BIOS but when you click on  the More (Advanced options) button in the lower right corner there will  be a lot more options for settings.
   > 4. You need to navigate then to the first of three options with 3  letters PBS or something like that. Under that there is an option for  Power Saving and there is the Modern StandBy setting.
+  
 - Deep sleep: The fix above enables the `deep` sleep option, but the system fails to resume from suspend with deep sleep enabled
+
+
 
 ## **[optimus-manager](https://github.com/Askannz/optimus-manager)**  
 
