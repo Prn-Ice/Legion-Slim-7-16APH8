@@ -53,11 +53,11 @@
     '::cccccccccccccc::;,.
   ```
 
-## Notes
+
+
+## Working
 
 - Most features worked out of the box, e.g brightness control, normal power consumption etc
-
-- Only one speaker worked after initial install, both worked after updates
 
 - System idles at around 7 - 9w
 
@@ -65,8 +65,8 @@
 
 - Keyboard deck stays warm-cool most of the time for basic tasks
 
-- AMD p-state seems to be enabled by default
-  
+- AMD p-state enabled by default
+
   ```shell
   prnice@fedora ~> cpupower frequency-info
   analyzing CPU 10:
@@ -90,12 +90,20 @@
    AMD PSTATE Lowest Performance: 16. Lowest Frequency: 400 MHz.
   ```
 
+
+
+## Not Working
+
+- Only one speaker worked after initial install, both worked after updates
+
 - Fingerprint scanner is detected but enrollment fails
 
+- Keyboard RGB config
+
 - Installing Nvidia drivers causes the PC to heat up and increases idle power consumption to around 30w
-  
+
   > When the Nvidia drivers are installed, `nvidia-powerd` reports an error setting GPU power limits. One speaker stopped working again after the Nvidia issues. 
-  
+
 - Closing the lid on sleep causes a shutdown
 
 
