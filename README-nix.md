@@ -30,11 +30,9 @@
 ~ › 
 ```
 
-
-
 ## Installation
 
-1. Fetch ISO from https://nixos.org/download/
+1. Fetch ISO from <https://nixos.org/download/>
 
 2. Choose the same desktop as the one in `nix` config. If desktop is not available, maybe install without desktop
 
@@ -56,11 +54,25 @@
    > sudo ln -s /home/prnice/Dotfiles/nixos-flaky-tests/* /etc/nixos/
    > ```
 
-10. Run build command 
+10. Run build command
 
 11. Handle bugs
 
-
+> Boot-loader docs: <https://nixos.wiki/wiki/Bootloader>
+>
+> Starter guide: <https://nixos-and-flakes.thiscute.world/>
+>
+> Use below to retrieve revision and `sha256` for theme
+>
+> ```shell
+> nix run nixpkgs#nix-prefetch-github stepanzubkov where-is-my-sddm-theme
+> ```
+>
+> Use below to retrieve `sha256` for images
+>
+> ```shell
+> nix-prefetch-url "https://images.wallpaperscraft.com/image/single/peacocks_feathers_patterns_118604_1600x1200.jpg"
+> ```
 
 ## Working
 
@@ -72,10 +84,25 @@
 - Copied color profiles from `/run/media/prnice/Windows-SSD/Windows/System32/spool/drivers/color/` into `~/Documents` and use the color profiles in display settings. sRGB profile looks darkest
 - Switched from `systemd-boot` to grub because grub supports sub-menus that I can use to hide nixos configurations
 
-
-
 ## Not Working
 
 - Similar to Arch
 - Audio is more flaky
-- Setting SDDM wallpap
+- Setting SDDM wallpaper on default theme is not possible. Need to use new theme
+- There is a delay after entering password after boot;
+  - This delay is waiting for fingerprint input
+  - If you enter fingerprint immediately, you will need to give `kwallet` password again
+  - If you wait, no need to re-enter password
+  - <https://www.reddit.com/r/kde/comments/11zvxzh/kde_wallet_auto_unlock_after_fingerprint_login/>
+  - <https://github.com/sddm/sddm/pull/1220>
+
+## Cleanup Commands
+
+To maintain your NixOS system and manage storage effectively, you can use these cleanup commands:
+
+- `nix-store --gc`: Performs garbage collection on the Nix store, removing unreachable packages
+- `nix-collect-garbage`: Higher-level garbage collection that also removes old user environment generations
+- `sudo nix-collect-garbage -d`: Deletes all old system and user profile generations (warning: prevents rollbacks)
+- `sudo nix run nixpkgs#ncdu /`: Interactive disk usage analyzer to identify space consumption
+
+These commands help keep your system clean and prevent unnecessary storage usage from old or unused Nix packages. Use `-d` flag with caution as it removes the ability to roll back to previous generations.
